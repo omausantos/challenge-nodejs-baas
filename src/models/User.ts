@@ -4,9 +4,7 @@ interface UserInterface extends Document {
   _id: Types.ObjectId,
   name: string,
   email: string,
-  password: string,
-  createdAt: Date,
-  updatedAt: Date
+  password?: string
 }
 
 const UserSchema = new Schema({
@@ -21,10 +19,10 @@ const UserSchema = new Schema({
   },
   password: {
     type: String,
-    required: true
+    required: true,
+    select: false
   }
-}, {
-  timestamps: true
-})
+},
+{ versionKey: false })
 
 export default model<UserInterface>('User', UserSchema)

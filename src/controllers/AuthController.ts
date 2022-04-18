@@ -7,7 +7,7 @@ class AuthController {
   public async authenticate (req: Request, res: Response) {
     const { email, password } = req.body
 
-    const user = await User.findOne({ email })
+    const user = await User.findOne({ email }).select('+password')
     if (!user) {
       return res.sendStatus(401)
     }
@@ -19,7 +19,7 @@ class AuthController {
 
     const token = jwt.sign({ id: user._id }, process.env.SECRET_AUTH, { expiresIn: '1d' })
 
-    return res.status(202).json({
+    return res.status(200).json({
       token
     })
   }
