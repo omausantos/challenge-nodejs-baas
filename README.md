@@ -39,7 +39,7 @@ yarn dev
 - [x] **POST /documents:** Incluir documento por usuário
 - [x] **GET /documents/ID:** Lista de documentos por usuário
 - [x] **GET /users:** Lista de usuários
-- [x] **GET /users/ID:** Todos os dadfos de somente um usuário
+- [x] **GET /users/ID:** Todos os dados de somente um usuário
 - [x] **POST /users:** Criar usuário
 - [ ] **Documentação Swagger:** Desenvolver documentação das API`s via Swagger
 
