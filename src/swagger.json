@@ -37,6 +37,9 @@
                 }
               }
             }
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
           }
         }
       },
@@ -106,6 +109,9 @@
                 }
               }
             }
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
           }
         }
       }
@@ -144,6 +150,9 @@
                 }
               }
             }
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
           }
         }
       }
@@ -177,6 +186,9 @@
                 }
               }
             }
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
           }
         }
       }
@@ -263,6 +275,9 @@
                 }
               }
             }
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
           }
         }
       },
@@ -284,6 +299,9 @@
                 }
               }
             }
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
           }
         }
       }
@@ -328,6 +346,9 @@
                 }
               }
             }
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
           }
         }
       }
@@ -358,6 +379,9 @@
                 }
               }
             }
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
           }
         }
       }
@@ -396,6 +420,9 @@
                 }
               }
             }
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
           }
         }
       }
@@ -464,6 +491,19 @@
         "properties": {
           "value": {
             "type": "string"
+          }
+        }
+      }
+    },
+    "responses": {
+      "401": {
+        "description": "Acesso negado, deve usar Token JWT válido",
+        "content": {
+          "text/plain": {
+            "schema": {
+              "type": "string",
+              "example": "Unauthorized"
+            }
           }
         }
       }
