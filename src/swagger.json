@@ -76,7 +76,8 @@
               }
             }
           }
-        }
+        },
+        "security": []
       }
     },
     "/users/{userId}": {
@@ -221,6 +222,60 @@
           }
         },
         "security": []
+      }
+    },
+    "/accounts": {
+      "post": {
+        "tags": [
+          "Conta"
+        ],
+        "summary": "Criar conta para usuário cadastrado",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "user": {
+                    "type": "string"
+                  },
+                  "number": {
+                    "type": "number"
+                  },
+                  "balance": {
+                    "type": "number"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Sucesso",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "_id": {
+                      "type": "string"
+                    },
+                    "user": {
+                      "type": "string"
+                    },
+                    "number": {
+                      "type": "number"
+                    },
+                    "balance": {
+                      "type": "number"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
       }
     }
   },
