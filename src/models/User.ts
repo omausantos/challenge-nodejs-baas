@@ -23,6 +23,13 @@ const UserSchema = new Schema({
     select: false
   }
 },
-{ versionKey: false })
+{
+  toJSON: {
+    transform (doc, ret) {
+      delete ret.password
+      delete ret.__v
+    }
+  }
+})
 
 export default model<UserInterface>('User', UserSchema)
