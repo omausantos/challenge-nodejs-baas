@@ -78,6 +78,9 @@
                 }
               }
             }
+          },
+          "409": {
+            "$ref": "#/components/responses/GenericError"
           }
         },
         "security": []
@@ -153,6 +156,9 @@
           },
           "401": {
             "$ref": "#/components/responses/401"
+          },
+          "409": {
+            "$ref": "#/components/responses/GenericError"
           }
         }
       }
@@ -231,6 +237,9 @@
                 }
               }
             }
+          },
+          "401": {
+            "$ref": "#/components/responses/GenericError"
           }
         },
         "security": []
@@ -278,6 +287,9 @@
           },
           "401": {
             "$ref": "#/components/responses/401"
+          },
+          "409": {
+            "$ref": "#/components/responses/GenericError"
           }
         }
       },
@@ -382,6 +394,9 @@
           },
           "401": {
             "$ref": "#/components/responses/401"
+          },
+          "406": {
+            "$ref": "#/components/responses/GenericError"
           }
         }
       }
@@ -423,6 +438,9 @@
           },
           "401": {
             "$ref": "#/components/responses/401"
+          },
+          "406": {
+            "$ref": "#/components/responses/GenericError"
           }
         }
       }
@@ -503,6 +521,21 @@
             "schema": {
               "type": "string",
               "example": "Unauthorized"
+            }
+          }
+        }
+      },
+      "GenericError": {
+        "description": "Mensagem para erro diversos",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string"
+                }
+              }
             }
           }
         }
