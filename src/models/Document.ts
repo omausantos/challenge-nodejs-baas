@@ -17,6 +17,13 @@ const DocumentSchema = new Schema({
     required: true,
     unique: true
   }
+},
+{
+  toJSON: {
+    transform (doc, ret) {
+      delete ret.__v
+    }
+  }
 })
 
 export default model<DocumentInterface>('Document', DocumentSchema)
