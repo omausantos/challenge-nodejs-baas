@@ -27,6 +27,8 @@ yarn dev
 
 05. Tudo pronto? Acesse http://localhost:3000/ e os EndPoints estarão disponiveis
 
+06. Documentação das API`s estão disponiveis em http://localhost:3000/swagger
+
 ### 📦 EndPoints do Desafio
 > O desafio é composto por 11 EndPoints, separados em 4 grupos e documentação.
 
