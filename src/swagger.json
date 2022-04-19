@@ -227,25 +227,14 @@
     "/accounts": {
       "post": {
         "tags": [
-          "Conta"
+          "Contas"
         ],
         "summary": "Criar conta para usuário cadastrado",
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "type": "object",
-                "properties": {
-                  "user": {
-                    "type": "string"
-                  },
-                  "number": {
-                    "type": "number"
-                  },
-                  "balance": {
-                    "type": "number"
-                  }
-                }
+                "$ref": "#/components/schemas/Account"
               }
             }
           }
@@ -270,6 +259,27 @@
                     "balance": {
                       "type": "number"
                     }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Contas"
+        ],
+        "summary": "Lista todas as contas cadastradas",
+        "responses": {
+          "200": {
+            "description": "Sucesso",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Account"
                   }
                 }
               }
@@ -317,6 +327,23 @@
           },
           "file": {
             "type": "string"
+          }
+        }
+      },
+      "Account": {
+        "type": "object",
+        "properties": {
+          "_id": {
+            "type": "string"
+          },
+          "user": {
+            "type": "string"
+          },
+          "number": {
+            "type": "number"
+          },
+          "balance": {
+            "type": "number"
           }
         }
       }
