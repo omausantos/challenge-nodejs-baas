@@ -354,12 +354,45 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "properties": {
-                    "value": {
-                      "type": "number"
-                    }
+                  "$ref": "#/components/schemas/Balance"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/accounts/transfer": {
+      "post": {
+        "tags": [
+          "Contas"
+        ],
+        "summary": "Transferencia bancaria entre contas P2P",
+        "requestBody": {
+          "description": "Digitar conta de destino e valor da transação, conta de origin sempre será do usuário do Token JWT",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "account": {
+                    "type": "number"
+                  },
+                  "value": {
+                    "type": "number"
                   }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Sucesso",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Balance"
                 }
               }
             }
@@ -423,6 +456,14 @@
           },
           "balance": {
             "type": "number"
+          }
+        }
+      },
+      "Balance": {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string"
           }
         }
       }
