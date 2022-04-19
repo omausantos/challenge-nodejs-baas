@@ -53,3 +53,4 @@ yarn dev
 * [`mongoose`](https://mongoosejs.com/) gestão do acesso ao MongoDB.
 * [`multer`](https://mongoosejs.com/) gestão de uploads de arquivos no NodeJS.
 * [`mime-types`](https://www.npmjs.com/package/mime-types) para validação do upload de arquivos, junto com @multer.
+* [`swagger-ui-express`](https://www.npmjs.com/package/swagger-ui-express) server para documentação API Swagger.
