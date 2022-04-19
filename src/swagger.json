@@ -255,7 +255,18 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Account"
+                "type": "object",
+                "properties": {
+                  "user": {
+                    "type": "string"
+                  },
+                  "number": {
+                    "type": "number"
+                  },
+                  "balance": {
+                    "type": "number"
+                  }
+                }
               }
             }
           }
@@ -266,18 +277,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "properties": {
-                    "user": {
-                      "type": "string"
-                    },
-                    "number": {
-                      "type": "number"
-                    },
-                    "balance": {
-                      "type": "number"
-                    }
-                  }
+                  "$ref": "#/components/schemas/Account"
                 }
               }
             }
