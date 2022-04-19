@@ -25,8 +25,13 @@ const AccountSchema = new Schema({
     type: Number,
     required: true
   }
-}, {
-  timestamps: true
+},
+{
+  toJSON: {
+    transform (doc, ret) {
+      delete ret.__v
+    }
+  }
 })
 
 export default model<AccountInterface>('Account', AccountSchema)

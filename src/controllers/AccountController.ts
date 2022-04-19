@@ -9,7 +9,7 @@ class AccountController {
       if (err) {
         return res.status(409).send({ message: err.message })
       } else {
-        return res.json(addAccount)
+        return res.status(201).json(addAccount)
       }
     })
   }
