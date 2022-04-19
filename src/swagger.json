@@ -331,6 +331,41 @@
           }
         }
       }
+    },
+    "/accounts/balance/{accountId}": {
+      "get": {
+        "tags": [
+          "Contas"
+        ],
+        "summary": "Saldo de uma conta especifica",
+        "parameters": [
+          {
+            "name": "accountId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Sucesso",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "value": {
+                      "type": "number"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "security": [
