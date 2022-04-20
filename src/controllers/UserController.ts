@@ -13,9 +13,12 @@ class UserController {
     return res.json(user)
   }
 
-  public async addUser (req: Request, res: Response): Promise<void> {
-    req.body.password = Utils.HashPassword(req.body.password)
-    console.log(req.body)
+  public async addUser (req: Request, res: Response): Promise<any> {
+    const password = req.body.password
+    if (!password) {
+      return res.status(409).send({ message: 'Password is requerired' })
+    }
+    req.body.password = Utils.HashPassword(password)
     const addUser = new User(req.body)
     addUser.save((err) => {
       if (err) {

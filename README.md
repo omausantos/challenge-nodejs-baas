@@ -27,21 +27,26 @@ yarn dev
 
 05. Tudo pronto? Acesse http://localhost:3000/ e os EndPoints estarão disponiveis
 
+06. Documentação das API`s estão disponiveis em http://localhost:3000/swagger
+```bash
+API POST/accounts Criar conta para usuário cadastrado, não está com autenticação para que possam criar um usuário para teste
+```
+
 ### 📦 EndPoints do Desafio
 > O desafio é composto por 11 EndPoints, separados em 4 grupos e documentação.
 
-- [x] **GET /accounts:** Lista de todas as contas
-- [x] **GET /accounts/ID:** Todos os dados de somente uma conta
+- [x] **GET /accounts:** Lista todas as contas cadastradas
+- [x] **GET /accounts/ID:** Todos os dados de uma conta especifica
 - [x] **GET /accounts/balance/ID:** Saldo de uma conta especifica
-- [x] **POST /accounts:** Criar uma conta
+- [x] **POST /accounts:** Criar conta para usuário cadastrado
 - [x] **POST /accounts/transfer:** Transferencia bancaria entre contas P2P
-- [x] **POST /auth:** Autenticação com Token JWT
-- [x] **POST /documents:** Incluir documento por usuário
-- [x] **GET /documents/ID:** Lista de documentos por usuário
-- [x] **GET /users:** Lista de usuários
-- [x] **GET /users/ID:** Todos os dados de somente um usuário
-- [x] **POST /users:** Criar usuário
-- [ ] **Documentação Swagger:** Desenvolver documentação das API`s via Swagger
+- [x] **POST /auth:** Requisitar token JWT
+- [x] **POST /documents:** Inclusão de documento por usuário
+- [x] **GET /documents/ID:** Lista de todos os documentos por usuário
+- [x] **GET /users:** Lista todos os usuários cadastrados
+- [x] **GET /users/ID:** Todos os dados de um usuário especifico
+- [x] **POST /users:** Inclusão de novo usuário
+- [x] **Documentação Swagger:** Desenvolver documentação das API`s via Swagger
 
 #### Package.json
 * [`ESLint`](https://eslint.org/) ferramenta para padronização de código, identificação de erros e unificação.
@@ -53,3 +58,4 @@ yarn dev
 * [`mongoose`](https://mongoosejs.com/) gestão do acesso ao MongoDB.
 * [`multer`](https://mongoosejs.com/) gestão de uploads de arquivos no NodeJS.
 * [`mime-types`](https://www.npmjs.com/package/mime-types) para validação do upload de arquivos, junto com @multer.
+* [`swagger-ui-express`](https://www.npmjs.com/package/swagger-ui-express) server para documentação API Swagger.

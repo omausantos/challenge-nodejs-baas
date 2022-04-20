@@ -9,7 +9,7 @@ class AccountController {
       if (err) {
         return res.status(409).send({ message: err.message })
       } else {
-        return res.json(addAccount)
+        return res.status(201).json(addAccount)
       }
     })
   }
@@ -53,12 +53,14 @@ class AccountController {
       { number: account },
       { balance: (accountDest.balance + value) }
     )
+
+    const newBalanceAccountOrigin = accountUser.balance - value
     await Account.findByIdAndUpdate(
       accountUser._id,
-      { balance: (accountUser.balance - value) }
+      { balance: newBalanceAccountOrigin }
     )
 
-    return res.json({ message: 'Transfer made successfully' })
+    return res.json({ value: newBalanceAccountOrigin })
   }
 }
 
